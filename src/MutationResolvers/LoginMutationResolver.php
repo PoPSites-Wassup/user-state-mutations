@@ -16,8 +16,8 @@ class LoginMutationResolver extends AbstractMutationResolver
     public function validateErrors(array $form_data): ?array
     {
         $errors = [];
-        $username_or_email = $form_data['username_or_email'];
-        $pwd = $form_data['pwd'];
+        $username_or_email = $form_data[MutationInputProperties::USERNAME_OR_EMAIL];
+        $pwd = $form_data[MutationInputProperties::PASSWORD];
 
         if (!$username_or_email) {
             $errors[] = TranslationAPIFacade::getInstance()->__('Please supply your username or email', 'ure-pop');
@@ -51,8 +51,8 @@ class LoginMutationResolver extends AbstractMutationResolver
         $cmsusersresolver = \PoPSchema\Users\ObjectPropertyResolverFactory::getInstance();
         $cmsuseraccountapi = \PoP\UserAccount\FunctionAPIFactory::getInstance();
 
-        $username_or_email = $form_data['username_or_email'];
-        $pwd = $form_data['pwd'];
+        $username_or_email = $form_data[MutationInputProperties::USERNAME_OR_EMAIL];
+        $pwd = $form_data[MutationInputProperties::PASSWORD];
 
         // Find out if it was a username or an email that was provided
         $is_email = strpos($username_or_email, '@');

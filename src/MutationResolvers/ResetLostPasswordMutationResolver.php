@@ -21,9 +21,9 @@ class ResetLostPasswordMutationResolver extends AbstractMutationResolver
     public function validateErrors(array $form_data): ?array
     {
         $errorcodes = array();
-        $code = $form_data['code'];
-        $pwd = $form_data['pwd'];
-        $repeatpwd = $form_data['repeatpwd'];
+        $code = $form_data[MutationInputProperties::CODE];
+        $pwd = $form_data[MutationInputProperties::PASSWORD];
+        $repeatpwd = $form_data[MutationInputProperties::REPEAT_PASSWORD];
 
         if (!$code) {
             $errorcodes[] = 'error-nocode';
@@ -46,8 +46,8 @@ class ResetLostPasswordMutationResolver extends AbstractMutationResolver
      */
     public function execute(array $form_data)
     {
-        $code = $form_data['code'];
-        $pwd = $form_data['pwd'];
+        $code = $form_data[MutationInputProperties::CODE];
+        $pwd = $form_data[MutationInputProperties::PASSWORD];
 
         $cmsuseraccountapi = \PoP\UserAccount\FunctionAPIFactory::getInstance();
         $decoded = MutationResolverUtils::decodeLostPasswordCode($code);

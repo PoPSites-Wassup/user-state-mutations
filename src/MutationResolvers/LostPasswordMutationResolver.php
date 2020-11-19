@@ -63,7 +63,7 @@ class LostPasswordMutationResolver extends AbstractMutationResolver
     {
         $errors = [];
         $cmsusersapi = \PoPSchema\Users\FunctionAPIFactory::getInstance();
-        $user_login = $form_data['user_login'];
+        $user_login = $form_data[MutationInputProperties::USER_LOGIN];
 
         // Code copied from file wp-login.php (We can't invoke it directly, since wp-login.php has not been loaded, and we can't do it since it executes a lot of unwanted code producing and output)
         if (empty($user_login)) {
@@ -93,7 +93,7 @@ class LostPasswordMutationResolver extends AbstractMutationResolver
         $cmsusersapi = \PoPSchema\Users\FunctionAPIFactory::getInstance();
         $cmsuseraccountapi = \PoP\UserAccount\FunctionAPIFactory::getInstance();
         $cmsusersresolver = \PoPSchema\Users\ObjectPropertyResolverFactory::getInstance();
-        $user_login = $form_data['user_login'];
+        $user_login = $form_data[MutationInputProperties::USER_LOGIN];
 
         if (strpos($user_login, '@')) {
             $user = $cmsusersapi->getUserByEmail(trim($user_login));
