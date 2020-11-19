@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\UserStateMutations\MutationResolverBridges;
 
-use PoPSitesWassup\UserStateMutations\MutationResolvers\LogoutMutationResolver;
+use PoPSchema\UserStateMutations\MutationResolvers\LogoutMutationResolver;
 use PoP\ComponentModel\MutationResolverBridges\AbstractComponentMutationResolverBridge;
 
 class LogoutMutationResolverBridge extends AbstractComponentMutationResolverBridge

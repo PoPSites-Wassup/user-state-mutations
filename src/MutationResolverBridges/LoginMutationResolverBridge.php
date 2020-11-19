@@ -6,7 +6,7 @@ namespace PoPSitesWassup\UserStateMutations\MutationResolverBridges;
 
 use PoP\ComponentModel\Facades\ModuleProcessors\ModuleProcessorManagerFacade;
 use PoPSitesWassup\UserStateMutations\MutationResolvers\LoginMutationResolver;
-use PoPSitesWassup\UserStateMutations\MutationResolvers\MutationInputProperties;
+use PoPSchema\UserStateMutations\MutationResolvers\MutationInputProperties;
 use PoP\ComponentModel\MutationResolverBridges\AbstractComponentMutationResolverBridge;
 
 class LoginMutationResolverBridge extends AbstractComponentMutationResolverBridge
