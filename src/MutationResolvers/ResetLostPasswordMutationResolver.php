@@ -8,7 +8,7 @@ use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\ComponentModel\Misc\GeneralUtils;
 use PoP\ComponentModel\MutationResolvers\ErrorTypes;
 use PoP\ComponentModel\MutationResolvers\AbstractMutationResolver;
-use PoP\ComponentModel\Error;
+use PoP\ComponentModel\ErrorHandling\Error;
 use PoPSitesWassup\UserStateMutations\MutationResolverUtils\MutationResolverUtils;
 
 class ResetLostPasswordMutationResolver extends AbstractMutationResolver
