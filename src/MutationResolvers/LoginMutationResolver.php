@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\UserStateMutations\MutationResolvers;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\UserAccount\FunctionAPIFactory;
 use PoPSchema\Users\TypeAPIs\UserTypeAPIInterface;
 use PoPSchema\UserStateMutations\MutationResolvers\LoginMutationResolver as UpstreamLoginMutationResolver;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class LoginMutationResolver extends UpstreamLoginMutationResolver
 {
     protected UserTypeAPIInterface $userTypeAPI;
 
     #[Required]
-    public function autowireUserStateMutationsLoginMutationResolver(
+    final public function autowireUserStateMutationsLoginMutationResolver(
         UserTypeAPIInterface $userTypeAPI,
     ): void {
         $this->userTypeAPI = $userTypeAPI;
