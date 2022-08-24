@@ -22,6 +22,7 @@ class LostPasswordMutationResolverBridge extends AbstractComponentMutationResolv
     }
     final protected function getLostPasswordMutationResolver(): LostPasswordMutationResolver
     {
+        /** @var LostPasswordMutationResolver */
         return $this->lostPasswordMutationResolver ??= $this->instanceManager->getInstance(LostPasswordMutationResolver::class);
     }
 
@@ -39,7 +40,8 @@ class LostPasswordMutationResolverBridge extends AbstractComponentMutationResolv
     }
 
     /**
-     * @return array<string, mixed>|null
+     * @return array<string,mixed>|null
+     * @param array<string,mixed> $data_properties
      */
     public function executeMutation(array &$data_properties): ?array
     {
